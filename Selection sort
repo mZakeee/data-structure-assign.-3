@@ -1,0 +1,14 @@
+void selectionSort(Vector<int>& arr) {
+    for (int i = 0; i < arr.size(); i++) {
+        
+        int S = i; // S stands for the smallest index
+        for (int j = i+1; j < arr.size(); j++) {
+            if (arr[j] < arr[S])
+                S = j;
+        }
+       
+        int tmp = arr[i];
+        arr[i] = arr[S];
+        arr[S] = tmp;
+    }
+}
