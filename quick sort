@@ -1,1 +1,42 @@
 
+
+void quickSort(Vector<int> &vec, int start, int finish) {
+    if (start >= finish) return;
+    int boundary = partition(vec, start, finish);
+    quickSort(vec, start, boundary - 1);
+    quickSort(vec, boundary + 1, finish);
+}
+void quickSort(Vector<int> &vec) {
+    quickSort(vec, 0, vec.size() - 1);
+}
+
+int partition(Vector<int> &vec, int start, int finish) {
+    int pivot = vec[start];
+    int lh = start + 1;
+    int rh = finish;
+
+    while (true) {
+        while (lh < rh && vec[rh] >= pivot) rh--;
+        while (lh < rh && vec[lh] < pivot) lh++;
+        if (lh == rh) break;
+        int tmp = vec[lh];
+        vec[lh] = vec[rh];
+        vec[rh] = tmp;
+    }
+
+    if (vec[lh] >= pivot) return start;
+    vec[start] = vec[lh];
+    vec[lh] = pivot;
+    return lh;
+}
+
+int main(){
+vector<int> vect{ 10, 78, 3, 45, 61 , 13 };
+quickSort(vect);
+
+for (int i=0; i<n; i++)
+    {
+        cout << vect[i] << endl;
+    }
+
+}
