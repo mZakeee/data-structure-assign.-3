@@ -12,3 +12,14 @@ void selectionSort(Vector<int>& arr) {
         arr[S] = tmp;
     }
 }
+
+int main(){
+vector<int> vect{ 10, 78, 3, 45, 61 , 13 };
+selectionSort(vect);
+
+for (int i=0; i<n; i++)
+    {
+        cout << vect[i] << endl;
+    }
+
+}
