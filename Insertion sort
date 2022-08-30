@@ -9,3 +9,15 @@ void insertionSort(Vector<int>& arr) {
         arr[j] = temp;
     }
 }
+
+
+int main(){
+vector<int> vect{ 10, 78, 3, 45, 61 , 13 };
+insertionSort(vect);
+
+for (int i=0; i<n; i++)
+    {
+        cout << vect[i] << endl;
+    }
+
+}
